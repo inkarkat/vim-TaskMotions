@@ -1,4 +1,4 @@
-*TaskMotions.txt*       Motion to task and TODO markers.
+*TaskMotions.txt*       Motions to task and TODO markers.
 
 			TASK MOTIONS    by Ingo Karkat
 							     *TaskMotions.vim*
@@ -6,7 +6,6 @@ description			|TaskMotions-description|
 usage				|TaskMotions-usage|
 installation			|TaskMotions-installation|
 configuration			|TaskMotions-configuration|
-integration			|TaskMotions-integration|
 limitations			|TaskMotions-limitations|
 known problems			|TaskMotions-known-problems|
 todo				|TaskMotions-todo|
@@ -56,8 +55,11 @@ For a permanent configuration, put the following commands into your |vimrc|:
 Tasks and TODO markers are defined by a regular expression. Change it via: >
     let g:TaskMotions_Pattern = '\<TODO:'
 <
-==============================================================================
-INTEGRATION					     *TaskMotions-integration*
+						       *g:TaskMotions_Mapping*
+To change the default mappings from ]t to ]x, use: >
+    let g:TaskMotions_Mapping = 'x'
+To also change the [ / ] prefix to something else, follow the instructions for
+|CountJump-remap-motions|. (This requires CountJump 1.60.)
 
 ==============================================================================
 LIMITATIONS					     *TaskMotions-limitations*
@@ -71,7 +73,7 @@ IDEAS							   *TaskMotions-ideas*
 ==============================================================================
 HISTORY							 *TaskMotions-history*
 
-GOAL
+1.00	28-Mar-2012
 First published version.
 
 0.01	19-Mar-2012
