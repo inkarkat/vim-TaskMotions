@@ -79,8 +79,15 @@ To also change the [ / ] prefix to something else, follow the instructions for
 CountJump-remap-motions. If you don't want a mapping, set the mapping
 configuration variable to the empty String ('').
 
-CONTRIBUTING
+LIMITATIONS
 ------------------------------------------------------------------------------
+
+- Because the algorithm used for ]T has to sequentially inspect every
+  character's highlight groups, movement (especially when there's no
+  additional match and the search continues to the buffer's border or wraps
+  around) can be noticeably slow.
+
+### CONTRIBUTING
 
 Report any bugs, send patches, or suggest features via the issue tracker at
 https://github.com/inkarkat/vim-TaskMotions/issues or email (address below).
