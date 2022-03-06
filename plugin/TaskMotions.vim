@@ -3,16 +3,10 @@
 " DEPENDENCIES:
 "   - CountJump/Motion.vim autoload script
 "
-" Copyright: (C) 2012 Ingo Karkat
+" Copyright: (C) 2012-2022 Ingo Karkat
 "   The VIM LICENSE applies to this script; see ':help copyright'.
 "
 " Maintainer:	Ingo Karkat <ingo@karkat.de>
-"
-" REVISION	DATE		REMARKS
-"   1.01.002	16-Oct-2012	Wrap around search when 'wrapscan' is set.
-"				This requires CountJump version 1.81.
-"   1.00.001	28-Mar-2012	Allow remapping.
-"	001	19-Mar-2012	file creation
 
 " Avoid installing twice or when in unsupported Vim version.
 if exists('g:loaded_TaskMotions') || (v:version < 700)
