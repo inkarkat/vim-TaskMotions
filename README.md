@@ -22,6 +22,11 @@ USAGE
     ]t                      Go to [count] next start of a task or TODO marker.
     [t                      Go to [count] previous start of a task or TODO marker.
 
+    ]T                      Go to [count] next start of something highlighted with
+                            the Todo highlight group.
+    [T                      Go to [count] previous start of something highlighted
+                            with the Todo highlight group.
+
 INSTALLATION
 ------------------------------------------------------------------------------
 
@@ -45,6 +50,8 @@ To uninstall, use the :RmVimball command.
 
 - Requires Vim 7.0 or higher.
 - Requires the CountJump plugin ([vimscript #3130](http://www.vim.org/scripts/script.php?script_id=3130)), version 1.81 or higher.
+- SameHighlightMotion.vim plugin (unreleased), version 1.00 or
+  higher (optional; only for the ]T mappings).
 
 CONFIGURATION
 ------------------------------------------------------------------------------
@@ -55,12 +62,22 @@ Tasks and TODO markers are defined by a regular expression. Change it via:
 
     let g:TaskMotions_Pattern = '\<TODO:'
 
+To include additional / different highlight groups in the ]T motions, adapt
+the regular expression for them:
+
+    let g:TaskMotions_HlgroupPattern = '^\%(Todo\|WarningMsg\)$'
+
 To change the default mappings from ]t to ]x, use:
 
     let g:TaskMotions_Mapping = 'x'
 
+To change the default mappings from ]T to ]X, use:
+
+    let g:TaskMotions_HlgroupMapping = 'X'
+
 To also change the [ / ] prefix to something else, follow the instructions for
-CountJump-remap-motions.
+CountJump-remap-motions. If you don't want a mapping, set the mapping
+configuration variable to the empty String ('').
 
 CONTRIBUTING
 ------------------------------------------------------------------------------
@@ -70,6 +87,10 @@ https://github.com/inkarkat/vim-TaskMotions/issues or email (address below).
 
 HISTORY
 ------------------------------------------------------------------------------
+
+##### 1.10    RELEASEME
+- ENH: Add alternative ]T mappings that use the Todo highlight group instead
+  of a regular expression pattern to locate Todos.
 
 ##### 1.01    16-Oct-2012
 - Wrap around search when 'wrapscan' is set.
